@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Senior Seminar — Team Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --brand-maroon:#5D1725; --brand-gray:#C1C6C8; --brand-white:#ffffff;
+      --accent-gold:#FFB81C; --accent-blue:#BDD6E6;
+      --text:#111827; --muted:#6b7280; --bg:#fafafa; --card:#ffffff;
+      --ring: rgba(93,23,37,.22); --shadow: 0 .5rem 1.25rem rgba(0,0,0,.08);
+      --radius: 16px; --radius-sm: 12px; --radius-lg: 24px; --maxw: 1200px;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg)}
+    a{color:var(--brand-maroon);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;background:var(--brand-white);border-bottom:1px solid #eee}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand h1{font-size:18px;line-height:1.1;margin:0}
+    .brand .sub{font-size:12px;color:var(--muted)}
+    nav ul{display:flex;gap:18px;list-style:none;margin:0;padding:0}
+    nav a{font-weight:600;padding:8px 10px;border-radius:10px}
+    nav a:is(:hover,:focus){background:rgba(93,23,37,.06);outline:none}
+
+    /* Hero */
+    .hero{position:relative;overflow:hidden;background:
+      radial-gradient(1200px 600px at 100% -200px, rgba(93,23,37,.12), transparent 70%),
+      radial-gradient(800px 500px at -100px -200px, rgba(255,184,28,.18), transparent 70%),
+      linear-gradient(180deg,#fff, #f7f7f7)}
+    .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:56px 0}
+    .kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(93,23,37,.08);color:var(--brand-maroon);border-radius:999px;padding:6px 12px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+    .title{font-size:clamp(28px,4vw,44px);line-height:1.05;margin:14px 0 10px;font-weight:900}
+    .subtitle{font-size:18px;color:#374151;margin:0 0 18px}
+    .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--brand-maroon);background:var(--brand-maroon);color:#fff;padding:11px 16px;border-radius:12px;font-weight:700;box-shadow:var(--shadow)}
+    .btn.secondary{background:#fff;color:var(--brand-maroon)}
+
+    /* Carousel */
+    .hero-figure{aspect-ratio:4/3;border-radius:var(--radius-lg);background:#fff;border:1px solid #eee;box-shadow:var(--shadow);overflow:hidden;position:relative}
+    .carousel{width:100%;height:100%}
+    .slides{display:flex;width:100%;height:100%;transition:transform .5s ease}
+    .slide{min-width:100%;height:100%;position:relative}
+    .slide img{width:100%;height:100%;object-fit:cover;display:block}
+    .caption{position:absolute;left:12px;bottom:12px;background:rgba(17,24,39,.7);color:#fff;padding:8px 10px;border-radius:10px;font-size:12px}
+
+    .ctrl{position:absolute;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:40px;height:40px;border-radius:999px;border:1px solid #e5e7eb;background:#fff;box-shadow:var(--shadow)}
+    .ctrl:hover{background:#f9fafb}
+    .ctrl:focus{outline:3px solid var(--ring)}
+    .ctrl.prev{left:10px}
+    .ctrl.next{right:10px}
+    .ctrl svg{width:18px;height:18px}
+    .dots{position:absolute;left:0;right:0;bottom:8px;display:flex;gap:8px;justify-content:center}
+    .dots button{width:10px;height:10px;border-radius:999px;border:1px solid #fff;background:rgba(255,255,255,.6)}
+    .dots button[aria-current="true"]{background:#fff}
+
+    /* Sections */
+    section{padding:48px 0}
+    h2.section{font-size:clamp(22px,3vw,32px);margin:0 0 12px}
+    p.lead{color:#374151;max-width:900px}
+
+    /* Cards & grids */
+    .grid{display:grid;gap:18px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    @media (max-width: 900px){
+      .hero .wrap{grid-template-columns:1fr}
+      .grid.cols-3{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width: 640px){
+      .grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
+    }
+    .card{background:var(--card);border:1px solid #eee;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
+    .card h3{margin:0 0 8px}
+    .meta{color:var(--muted);font-size:13px}
+
+    /* Timeline */
+    .timeline{position:relative;margin-top:12px}
+    .timeline:before{content:"";position:absolute;left:14px;top:0;bottom:0;width:2px;background:var(--brand-gray)}
+    .milestone{position:relative;padding-left:40px;margin:18px 0}
+    .milestone:before{content:"";position:absolute;left:6px;top:.6rem;width:16px;height:16px;background:var(--brand-maroon);border:2px solid #fff;border-radius:50%;box-shadow:0 0 0 3px var(--ring)}
+
+    /* Badges */
+    .badge{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em;padding:6px 10px;border-radius:999px;border:1px solid var(--brand-maroon);color:var(--brand-maroon);background:rgba(93,23,37,.06)}
+
+    /* Footer */
+    footer{background:#111827;color:#f3f4f6;padding:36px 0;margin-top:24px}
+    footer a{color:#f3f4f6;text-decoration:underline}
+    .footgrid{display:grid;gap:24px;grid-template-columns:2fr 1fr}
+    @media(max-width:800px){.footgrid{grid-template-columns:1fr}}
+
+    /* Utilities */
+    .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .spacer{height:8px}
+    .mb-0{margin-bottom:0}.mb-1{margin-bottom:6px}.mb-2{margin-bottom:12px}.mb-3{margin-bottom:18px}.mb-4{margin-bottom:24px}
+    .pill{display:inline-flex;align-items:center;gap:8px;background:#f3f4f6;border-radius:999px;padding:6px 10px}
+    .downloads a{display:inline-flex;align-items:center;gap:10px;border:1px solid #e5e7eb;padding:10px 12px;border-radius:12px;background:#fff;box-shadow:var(--shadow)}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand" aria-label="Site brand">
+        <div>
+          <h1>Senior Seminar Project</h1>
+          <div class="sub">Aerospace Engineering students at Mississippi State University</div>
+        </div>
+      </div>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#scope">Scope</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#work">Work</a></li>
+          <li><a href="#timeline">Timeline</a></li>
+          <li><a href="#references">References</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container wrap">
+      <div>
+        <span class="kicker">Senior Seminar Research</span>
+        <h2 class="title">3D DIC & Vibro-Modal Characterization of Wet-Stitched Pre-Preg Composites</h2>
+        <p class="subtitle">Test Yonsei-provided wet-stitched carbon laminates using 3-point bending & tension with 3D DIC (at ACI); correlate with Abaqus; quantify dynamic behavior via laser vibrometry (at Aerostructures for Hypersonic Flight Research Lab, Walker 123); optionally design dry-stitched, resin-infused panels at ACI.</p>
+        <div class="hero-points">
+          <span class="badge">Fall 2025</span>
+          <span class="pill">Advisors: Dr. Han-Gyu Kim • Dr. Taehee Lee</span>
+          <span class="pill">Team: Lonnie Tankersley, Garv Patel, Christopher Bolton, Ethan White</span>
+        </div>
+        <div class="spacer"></div>
+        <div class="cta">
+          <a class="btn secondary" href="#work">See Latest Work</a>
+        </div>
+      </div>
+
+      <!-- HERO (single-image-ready) -->
+      <figure class="hero-figure" aria-label="Project image">
+        <div class="carousel" id="heroCarousel">
+          <div class="slides" role="group" aria-roledescription="carousel" aria-label="Project images">
+            <!-- Slides injected by JS -->
+          </div>
+          <button class="ctrl prev" aria-label="Previous image" id="prevBtn">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="ctrl next" aria-label="Next image" id="nextBtn">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <div class="dots" id="dotNav"><!-- Dots injected by JS --></div>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h2 class="section">Project Definition</h2>
+      <p class="lead">Stitched composites are increasingly used for lightweight, durable structures. Yonsei-manufactured, wet-stitched pre-preg laminates provide a chance to study interlaminar damage propagation, stiffness degradation, and modal behavior relevant to aerospace and infrastructure applications.</p>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Problem Statement</h3>
+          <p class="mb-0">Understand how stitching in thick laminates affects crack growth, strain fields, and dynamic response under representative loading.</p>
+        </div>
+        <div class="card">
+          <h3>Impact</h3>
+          <p class="mb-0">Results inform stitched-composite design for primary structures and composite-reinforced infrastructure.</p>
+        </div>
+        <div class="card">
+          <h3>Partners & Facilities</h3>
+          <ul class="mb-0">
+            <li>Yonsei University — specimens</li>
+            <li>Mississippi State ACI — 3D DIC, Shimadzu UTM, resin infusion</li>
+            <li>Aerostructures for Hypersonic Flight Research Lab (Walker 123) — laser vibrometry</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="scope">
+    <div class="container">
+      <h2 class="section">Scope of Work</h2>
+      <p class="lead">Semester objectives and methods aligned to deliver a validated dataset and presentation-ready results.</p>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>Objectives</h3>
+          <ul class="mb-0">
+            <li>Measure & speckle all Yonsei specimens.</li>
+            <li>Run three-point bending & tension tests.</li>
+            <li>Use 3D DIC for full-field strain maps (at ACI).</li>
+            <li>Develop & validate an Abaqus model.</li>
+            <li>Laser vibrometer modal testing (fn, ζ, mode shapes) at Walker 123.</li>
+            <li>Deliver a clean dataset for Yonsei; prepare AIAA-quality visuals.</li>
+            <li>Stretch goal: design & manufacture dry-stitched, resin-infused panels at ACI.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Methods</h3>
+          <p class="mb-0">Specimen prep & QA; DIC calibration (ACI); static tests with synchronized imaging; numerical correlation in Abaqus; vibro-modal excitation & ID at Walker 123; compare stitched architecture effects.</p>
+        </div>
+        <div class="card">
+          <h3>Reporting & Rhythm</h3>
+          <ul class="mb-0">
+            <li>Bi-weekly / monthly meetings with Dr. Han-Gyu Kim.</li>
+            <li>Email summaries & data to Dr. Taehee Lee as needed.</li>
+            <li>Ongoing website documentation & Gantt updates.</li>
+            <li>Formal class updates and end-of-term report.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="container">
+      <h2 class="section">Team & Roles</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Lonnie Tankersley — Specimen Prep & Testing Lead</h3>
+          <div class="meta mb-2">Paint/speckle; coordinate Shimadzu UTM testing at ACI.</div>
+        </div>
+        <div class="card">
+          <h3>Garv Patel — Dynamic Testing & Coordinator Lead</h3>
+          <div class="meta mb-2">Laser vibrometry at Walker 123; integrate dynamic & static results; assist Abaqus; coordinate contingencies.</div>
+        </div>
+        <div class="card">
+          <h3>Christopher Bolton — Numerical Analysis & Modeling Lead</h3>
+          <div class="meta mb-2">Abaqus models with stitching; post-test numerical analysis.</div>
+        </div>
+        <div class="card">
+          <h3>Ethan White — Development & Manufacturing Lead</h3>
+          <div class="meta mb-2">Leads dry-stitched panel development; contributes Abaqus models.</div>
+        </div>
+      </div>
+      <div class="spacer"></div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Advisors</h3>
+          <ul class="mb-0">
+            <li>Dr. Han-Gyu Kim (Primary)</li>
+            <li>Dr. Taehee Lee (Secondary)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Success Criteria</h3>
+          <ul class="mb-0">
+            <li>Calibrated DIC & clean strain maps (ACI).</li>
+            <li>Repeatable load–displacement curves.</li>
+            <li>Abaqus correlation within agreed tolerances.</li>
+            <li>Identified modal shifts vs. stitch architecture (Walker 123).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="container">
+      <h2 class="section">Work Accomplished</h2>
+      <p class="lead">Quick tiles that link to notes, images, or data as they’re produced.</p>
+      <div class="grid cols-3">
+        <article class="card">
+          <h3 class="mb-1">Specimen Intake & QA</h3>
+          <div class="meta mb-2">Aug–Sep 2025 • ACI</div>
+          <p class="mb-2">Catalog thickness & stitch pitch; prep surfaces; apply speckle patterns; document layups.</p>
+          <a href="#">Read notes →</a>
+        </article>
+        <article class="card">
+          <h3 class="mb-1">DIC Setup & Calibration</h3>
+          <div class="meta mb-2">Sep 2025 • ACI</div>
+          <p class="mb-2">Two-camera calibration; subset/step optimization on a dummy coupon.</p>
+          <a href="#">Calibration packet →</a>
+        </article>
+        <article class="card">
+          <h3 class="mb-1">Static Tests — 3-pt Bend & Tension</h3>
+          <div class="meta mb-2">Oct 2025 • ACI</div>
+          <p class="mb-2">Load–displacement + full-field strain; note crack initiation/bridging features.</p>
+          <a href="#">Data & figures →</a>
+        </article>
+        <article class="card">
+          <h3 class="mb-1">Vibro-Modal Characterization</h3>
+          <div class="meta mb-2">Oct–Nov 2025 • Walker 123</div>
+          <p class="mb-2">Laser vibrometer sweep to identify fn, damping, and mode shapes.</p>
+          <a href="#">Modal results →</a>
+        </article>
+        <article class="card">
+          <h3 class="mb-1">Abaqus Correlation</h3>
+          <div class="meta mb-2">Nov 2025 • Modeling</div>
+          <p class="mb-2">Model stitched architecture, tune parameters, compare to lab data.</p>
+          <a href="#">Model files →</a>
+        </article>
+        <article class="card">
+          <h3 class="mb-1">Stretch Goal — Dry-Stitched Panels</h3>
+          <div class="meta mb-2">As time permits • ACI</div>
+          <p class="mb-2">Design, manufacture, and test resin-infused, dry-stitched panels; compare with Yonsei parts.</p>
+          <a href="#">Build log →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="container">
+      <h2 class="section">Timeline</h2>
+      <p class="lead">Lightweight Gantt-style checkpoints.</p>
+      <div class="timeline">
+        <div class="milestone"><h3 class="mb-1">SOW Complete</h3><div class="meta">Target: Sep 2, 2025</div></div>
+        <div class="milestone"><h3 class="mb-1">Proposal Presentation</h3><div class="meta">Target: Early Sep 2025</div></div>
+        <div class="milestone"><h3 class="mb-1">Website v1 (this page)</h3><div class="meta">Target: Sep 3, 2025</div></div>
+        <div class="milestone"><h3 class="mb-1">Article Review #1</h3><div class="meta">Due: Sep 15, 2025</div></div>
+        <div class="milestone"><h3 class="mb-1">Monthly Update — Sept</h3><div class="meta">Due: Sep 29, 2025</div></div>
+        <div class="milestone"><h3 class="mb-1">Article Review #2</h3><div class="meta">Due: Oct 6, 2025</div></div>
+        <div class="milestone"><h3 class="mb-1">Monthly Update — Oct</h3><div class="meta">Due: Oct 27, 2025</div></div>
+        <div class="milestone"><h3 class="mb-1">End-of-Semester Write-up</h3><div class="meta">Due: Nov 17, 2025</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="references">
+    <div class="container">
+      <h2 class="section">References</h2>
+      <p class="lead">Standards, key papers, and lab docs.</p>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Key Papers & Standards</h3>
+          <ul class="mb-0">
+            <li>ASTM D7905/D7905M — Mode II Interlaminar Fracture Toughness (ENF)</li>
+            <li>Representative stitched-laminate fracture & modal studies (add DOIs)</li>
+            <li>DIC best-practice guides (subset, step, calibration)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Lab Docs</h3>
+          <ul class="mb-0">
+            <li>DIC calibration procedure (PDF)</li>
+            <li>Specimen log & material tracking worksheet</li>
+            <li>Test matrix and safety checklist</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section">Contact</h2>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3 class="mb-1">Team Emails</h3>
+          <p class="mb-2"><a href="mailto:lmt413@msstate.edu">Lonnie Tankersley</a> • <a href="mailto:cdb1066@msstate.edu">Christopher Bolton</a></p>
+          <p class="mb-2"><a href="mailto:gdp98@msstate.edu">Garv Patel</a> • <a href="mailto:emw511@msstate.edu">Ethan White</a></p>
+          <h3 class="mb-1">Advisor Emails</h3>
+          <p class="mb-2"><a href="mailto:hkim@ae.msstate.edu">Dr. Han-Gyu Kim</a> • <a href="mailto:tl1401@msstate.edu">Dr. Taehee Lee</a></p>
+        </div>
+        <div class="card">
+          <h3 class="mb-1">Facilities</h3>
+          <p class="mb-2">3D DIC: Mississippi State Advanced Composites Institute (ACI)</p>
+          <p class="mb-2">Laser Vibrometry: Aerostructures for Hypersonic Flight Research Lab (Walker 123)</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footgrid">
+      <div>
+        <strong>Unofficial student project site</strong>
+        <p class="mb-2">Built for a Senior Seminar course project. © 2025.</p>
+      </div>
+      <div>
+        <div>Links</div>
+        <ul>
+          <li><a href="#">Course Page</a></li>
+          <li><a href="#">Documentation</a></li>
+          <li><a href="#">Repository</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // --- HERO CAROUSEL SETUP (single image ready) ---
+    // Only one image for now; controls & dots hide automatically when length <= 1.
+    const HERO_IMAGES = [
+      { src: 'image_2025-08-29_203154627.jpeg', alt: 'Taking measurements of the specimens' }
+    ];
+    const AUTOPLAY_MS = 5000; // unused when single image
+    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+
+    const slidesEl = document.querySelector('.slides');
+    const dotsEl   = document.getElementById('dotNav');
+    const prevBtn  = document.getElementById('prevBtn');
+    const nextBtn  = document.getElementById('nextBtn');
+    const carousel = document.getElementById('heroCarousel');
+    let current = 0, timer = null, hovering = false;
+
+    // Build slides (and dots if multiple)
+    HERO_IMAGES.forEach((img, i)=>{
+      const slide = document.createElement('div');
+      slide.className = 'slide';
+      slide.setAttribute('role','group');
+      slide.setAttribute('aria-roledescription','slide');
+      slide.setAttribute('aria-label', `Slide ${i+1} of ${HERO_IMAGES.length}`);
+      const el = document.createElement('img');
+      el.src = img.src;
+      el.alt = img.alt || '';
+      slide.appendChild(el);
+
+      const cap = document.createElement('div');
+      cap.className = 'caption';
+      cap.textContent = img.alt || 'Project image';
+      slide.appendChild(cap);
+
+      slidesEl.appendChild(slide);
+
+      if (HERO_IMAGES.length > 1) {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.setAttribute('aria-label', `Go to slide ${i+1}`);
+        dot.addEventListener('click', ()=> go(i));
+        dotsEl.appendChild(dot);
+      }
+    });
+
+    function update(){
+      slidesEl.style.transform = `translateX(-${current*100}%)`;
+      if (HERO_IMAGES.length > 1) {
+        [...dotsEl.children].forEach((d, i)=> d.setAttribute('aria-current', i===current ? 'true' : 'false'));
+      }
+    }
+    function go(i){ current = (i+HERO_IMAGES.length)%HERO_IMAGES.length; update(); }
+    function next(){ go(current+1); }
+    function prev(){ go(current-1); }
+
+    // Hide controls/dots if only one image
+    if (HERO_IMAGES.length <= 1) {
+      prevBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+      dotsEl.style.display  = 'none';
+      carousel.setAttribute('aria-roledescription','img'); // simpler semantics
+    } else {
+      prevBtn.addEventListener('click', prev);
+      nextBtn.addEventListener('click', next);
+      carousel.addEventListener('keydown', (e)=>{
+        if(e.key === 'ArrowRight'){ e.preventDefault(); next(); }
+        if(e.key === 'ArrowLeft'){  e.preventDefault(); prev(); }
+      });
+      // Autoplay
+      carousel.addEventListener('mouseenter', ()=>{ hovering = true; stop(); });
+      carousel.addEventListener('mouseleave', ()=>{ hovering = false; start(); });
+      carousel.addEventListener('focusin',  stop);
+      carousel.addEventListener('focusout', start);
+      start();
+    }
+
+    function start(){
+      if(prefersReducedMotion || hovering || HERO_IMAGES.length <= 1) return;
+      stop();
+      timer = setInterval(next, AUTOPLAY_MS);
+    }
+    function stop(){ if(timer){ clearInterval(timer); timer = null; } }
+
+    // Init
+    update();
+  </script>
+</body>
+</html>
