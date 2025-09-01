@@ -11,9 +11,18 @@
     :root{
       --brand-maroon:#5D1725; --brand-gray:#C1C6C8; --brand-white:#ffffff;
       --accent-gold:#FFB81C; --accent-blue:#BDD6E6;
-      --text:#111827; --muted:#6b7280; --bg:#fafafa; --card:#ffffff;
-      --ring: rgba(93,23,37,.22); --shadow: 0 .5rem 1.25rem rgba(0,0,0,.08);
-      --radius: 16px; --radius-sm: 12px; --radius-lg: 24px; --maxw: 1200px;
+      --text:#111827; --muted:#6b7280;
+
+      /* Muted MSU Maroon background */
+      --bg:
+    	radial-gradient(1200px 600px at 80% -200px, rgba(93,23,37,.22), transparent 70%),
+    	radial-gradient(900px 500px at -200px -200px, rgba(93,23,37,.18), transparent 65%),
+    	linear-gradient(180deg, #ede3e5, #f5eaec);
+
+      --card:#ffffff; --ring: rgba(93,23,37,.22);
+      --shadow: 0 .5rem 1.25rem rgba(0,0,0,.08);
+      --radius: 16px; --radius-sm: 12px; --radius-lg: 24px;
+      --maxw: 1200px;
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--bg)}
@@ -32,17 +41,44 @@
     nav a:is(:hover,:focus){background:rgba(93,23,37,.06);outline:none}
 
     /* Hero */
-    .hero{position:relative;overflow:hidden;background:
-      radial-gradient(1200px 600px at 100% -200px, rgba(93,23,37,.12), transparent 70%),
-      radial-gradient(800px 500px at -100px -200px, rgba(255,184,28,.18), transparent 70%),
-      linear-gradient(180deg,#fff, #f7f7f7)}
+    .hero{position:relative;overflow:hidden;background: radial-gradient(1200px 600px at 100% -200px, rgba(93,23,37,.12), transparent 70%), radial-gradient(800px 500px at -100px -200px, rgba(255,184,28,.18), transparent 70%), linear-gradient(180deg,#fff, #f7f7f7)}
     .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:56px 0}
-    .kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(93,23,37,.08);color:var(--brand-maroon);border-radius:999px;padding:6px 12px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
+    .kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(93,23,37,.08);color:var(--brand-maroon);border-radius:999px;padding:6px 4px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
     .title{font-size:clamp(28px,4vw,44px);line-height:1.05;margin:14px 0 10px;font-weight:900}
     .subtitle{font-size:18px;color:#374151;margin:0 0 18px}
     .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--brand-maroon);background:var(--brand-maroon);color:#fff;padding:11px 16px;border-radius:12px;font-weight:700;box-shadow:var(--shadow)}
     .btn.secondary{background:#fff;color:var(--brand-maroon)}
+
+.hero {
+  background: var(--brand-maroon);
+  color: #ffffff;
+  padding: 0px 0;
+}
+
+.hero .subtitle {
+  color: #f3f4f6; /* lighter gray text on maroon */
+}
+
+.hero .kicker {
+  background: rgba(255,255,255,.15);
+  color: #fff;
+}
+
+.hero .badge {
+  background: #fff;
+  color: var(--brand-maroon);
+}
+
+.hero .pill {
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+}
+
+.hero .pill a {
+  color: #fff; /* ensure email links inside pills stay visible */
+  text-decoration: underline;
+}
 
     /* Carousel */
     .hero-figure{aspect-ratio:4/3;border-radius:var(--radius-lg);background:#fff;border:1px solid #eee;box-shadow:var(--shadow);overflow:hidden;position:relative}
@@ -51,7 +87,6 @@
     .slide{min-width:100%;height:100%;position:relative}
     .slide img{width:100%;height:100%;object-fit:cover;display:block}
     .caption{position:absolute;left:12px;bottom:12px;background:rgba(17,24,39,.7);color:#fff;padding:8px 10px;border-radius:10px;font-size:12px}
-
     .ctrl{position:absolute;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:40px;height:40px;border-radius:999px;border:1px solid #e5e7eb;background:#fff;box-shadow:var(--shadow)}
     .ctrl:hover{background:#f9fafb}
     .ctrl:focus{outline:3px solid var(--ring)}
@@ -144,25 +179,22 @@
           <a class="btn secondary" href="#work">See Latest Work</a>
         </div>
       </div>
-
-      <!-- HERO (single-image-ready) -->
       <figure class="hero-figure" aria-label="Project image">
         <div class="carousel" id="heroCarousel">
-          <div class="slides" role="group" aria-roledescription="carousel" aria-label="Project images">
-            <!-- Slides injected by JS -->
-          </div>
+          <div class="slides" role="group" aria-roledescription="carousel" aria-label="Project images"></div>
           <button class="ctrl prev" aria-label="Previous image" id="prevBtn">
             <svg viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
           <button class="ctrl next" aria-label="Next image" id="nextBtn">
             <svg viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
-          <div class="dots" id="dotNav"><!-- Dots injected by JS --></div>
+          <div class="dots" id="dotNav"></div>
         </div>
       </figure>
     </div>
   </section>
 
+  <!-- About Section -->
   <section id="about">
     <div class="container">
       <h2 class="section">Project Definition</h2>
@@ -188,6 +220,7 @@
     </div>
   </section>
 
+  <!-- Scope Section -->
   <section id="scope">
     <div class="container">
       <h2 class="section">Scope of Work</h2>
@@ -222,6 +255,7 @@
     </div>
   </section>
 
+  <!-- Team Section -->
   <section id="team">
     <div class="container">
       <h2 class="section">Team & Roles</h2>
@@ -265,6 +299,7 @@
     </div>
   </section>
 
+  <!-- Work Section -->
   <section id="work">
     <div class="container">
       <h2 class="section">Work Accomplished</h2>
@@ -310,6 +345,7 @@
     </div>
   </section>
 
+  <!-- Timeline Section -->
   <section id="timeline">
     <div class="container">
       <h2 class="section">Timeline</h2>
@@ -327,6 +363,7 @@
     </div>
   </section>
 
+  <!-- References Section -->
   <section id="references">
     <div class="container">
       <h2 class="section">References</h2>
@@ -352,6 +389,7 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact">
     <div class="container">
       <h2 class="section">Contact</h2>
@@ -372,6 +410,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container footgrid">
       <div>
@@ -389,23 +428,18 @@
     </div>
   </footer>
 
+  <!-- Carousel Script -->
   <script>
-    // --- HERO CAROUSEL SETUP (single image ready) ---
-    // Only one image for now; controls & dots hide automatically when length <= 1.
-    const HERO_IMAGES = [
-      { src: 'image_2025-08-29_203154627.jpeg', alt: 'Taking measurements of the specimens' }
-    ];
-    const AUTOPLAY_MS = 5000; // unused when single image
+    const HERO_IMAGES = [ { src: 'image_2025-08-29_203154627.jpeg', alt: 'Taking measurements of the specimens' } ];
+    const AUTOPLAY_MS = 5000;
     const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
-
     const slidesEl = document.querySelector('.slides');
-    const dotsEl   = document.getElementById('dotNav');
-    const prevBtn  = document.getElementById('prevBtn');
-    const nextBtn  = document.getElementById('nextBtn');
+    const dotsEl = document.getElementById('dotNav');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
     const carousel = document.getElementById('heroCarousel');
     let current = 0, timer = null, hovering = false;
 
-    // Build slides (and dots if multiple)
     HERO_IMAGES.forEach((img, i)=>{
       const slide = document.createElement('div');
       slide.className = 'slide';
@@ -416,14 +450,11 @@
       el.src = img.src;
       el.alt = img.alt || '';
       slide.appendChild(el);
-
       const cap = document.createElement('div');
       cap.className = 'caption';
       cap.textContent = img.alt || 'Project image';
       slide.appendChild(cap);
-
       slidesEl.appendChild(slide);
-
       if (HERO_IMAGES.length > 1) {
         const dot = document.createElement('button');
         dot.type = 'button';
@@ -443,35 +474,26 @@
     function next(){ go(current+1); }
     function prev(){ go(current-1); }
 
-    // Hide controls/dots if only one image
     if (HERO_IMAGES.length <= 1) {
       prevBtn.style.display = 'none';
       nextBtn.style.display = 'none';
-      dotsEl.style.display  = 'none';
-      carousel.setAttribute('aria-roledescription','img'); // simpler semantics
+      dotsEl.style.display = 'none';
+      carousel.setAttribute('aria-roledescription','img');
     } else {
       prevBtn.addEventListener('click', prev);
       nextBtn.addEventListener('click', next);
       carousel.addEventListener('keydown', (e)=>{
         if(e.key === 'ArrowRight'){ e.preventDefault(); next(); }
-        if(e.key === 'ArrowLeft'){  e.preventDefault(); prev(); }
+        if(e.key === 'ArrowLeft'){ e.preventDefault(); prev(); }
       });
-      // Autoplay
       carousel.addEventListener('mouseenter', ()=>{ hovering = true; stop(); });
       carousel.addEventListener('mouseleave', ()=>{ hovering = false; start(); });
-      carousel.addEventListener('focusin',  stop);
+      carousel.addEventListener('focusin', stop);
       carousel.addEventListener('focusout', start);
       start();
     }
-
-    function start(){
-      if(prefersReducedMotion || hovering || HERO_IMAGES.length <= 1) return;
-      stop();
-      timer = setInterval(next, AUTOPLAY_MS);
-    }
+    function start(){ if(prefersReducedMotion || hovering || HERO_IMAGES.length <= 1) return; stop(); timer = setInterval(next, AUTOPLAY_MS); }
     function stop(){ if(timer){ clearInterval(timer); timer = null; } }
-
-    // Init
     update();
   </script>
 </body>
