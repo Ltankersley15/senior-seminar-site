@@ -132,6 +132,17 @@
     .footgrid{display:grid;gap:24px;grid-template-columns:2fr 1fr}
     @media(max-width:800px){.footgrid{grid-template-columns:1fr}}
 
+    /* Team headshots */
+    #team .avatar{
+      width: 84px; height: 84px;
+      border-radius: 999px;
+      object-fit: cover;
+      display: block;
+      box-shadow: var(--shadow);
+      border: 3px solid #fff;
+      margin-bottom: 10px; /* space above the name when placed above */
+    }
+
     /* Utilities */
     .sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
     .spacer{height:8px}
@@ -261,18 +272,22 @@
       <h2 class="section">Team & Roles</h2>
       <div class="grid cols-2">
         <div class="card">
+          <img class="avatar" src="images/team/lonnie.jpg" alt="Lonnie Tankersley headshot" />
           <h3>Lonnie Tankersley — Specimen Prep & Testing Lead</h3>
           <div class="meta mb-2">Paint/speckle; coordinate Shimadzu UTM testing at ACI.</div>
         </div>
         <div class="card">
+          <img class="avatar" src="images/team/garv.jpg" alt="Garv Patel headshot" />
           <h3>Garv Patel — Dynamic Testing & Coordinator Lead</h3>
           <div class="meta mb-2">Laser vibrometry at Walker 123; integrate dynamic & static results; assist Abaqus; coordinate contingencies.</div>
         </div>
         <div class="card">
+          <img class="avatar" src="images/team/christopher.jpg" alt="Christopher Bolton headshot" />
           <h3>Christopher Bolton — Numerical Analysis & Modeling Lead</h3>
           <div class="meta mb-2">Abaqus models with stitching; post-test numerical analysis.</div>
         </div>
         <div class="card">
+          <img class="avatar" src="images/team/ethan.jpg" alt="Ethan White headshot" />
           <h3>Ethan White — Development & Manufacturing Lead</h3>
           <div class="meta mb-2">Leads dry-stitched panel development; contributes Abaqus models.</div>
         </div>
