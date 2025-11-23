@@ -15,9 +15,9 @@
 
       /* Muted MSU Maroon background */
       --bg:
-    	radial-gradient(1200px 600px at 80% -200px, rgba(93,23,37,.22), transparent 70%),
-    	radial-gradient(900px 500px at -200px -200px, rgba(93,23,37,.18), transparent 65%),
-    	linear-gradient(180deg, #ede3e5, #f5eaec);
+        radial-gradient(1200px 600px at 80% -200px, rgba(93,23,37,.22), transparent 70%),
+        radial-gradient(900px 500px at -200px -200px, rgba(93,23,37,.18), transparent 65%),
+        linear-gradient(180deg, #ede3e5, #f5eaec);
 
       --card:#ffffff; --ring: rgba(93,23,37,.22);
       --shadow: 0 .5rem 1.25rem rgba(0,0,0,.08);
@@ -50,35 +50,35 @@
     .btn{display:inline-flex;align-items:center;gap:10px;border:2px solid var(--brand-maroon);background:var(--brand-maroon);color:#fff;padding:11px 16px;border-radius:12px;font-weight:700;box-shadow:var(--shadow)}
     .btn.secondary{background:#fff;color:var(--brand-maroon)}
 
-.hero {
-  background: var(--brand-maroon);
-  color: #ffffff;
-  padding: 0px 0;
-}
+    .hero {
+      background: var(--brand-maroon);
+      color: #ffffff;
+      padding: 0px 0;
+    }
 
-.hero .subtitle {
-  color: #f3f4f6; /* lighter gray text on maroon */
-}
+    .hero .subtitle {
+      color: #f3f4f6; /* lighter gray text on maroon */
+    }
 
-.hero .kicker {
-  background: rgba(255,255,255,.15);
-  color: #fff;
-}
+    .hero .kicker {
+      background: rgba(255,255,255,.15);
+      color: #fff;
+    }
 
-.hero .badge {
-  background: #fff;
-  color: var(--brand-maroon);
-}
+    .hero .badge {
+      background: #fff;
+      color: var(--brand-maroon);
+    }
 
-.hero .pill {
-  background: rgba(255,255,255,0.15);
-  color: #fff;
-}
+    .hero .pill {
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+    }
 
-.hero .pill a {
-  color: #fff; /* ensure email links inside pills stay visible */
-  text-decoration: underline;
-}
+    .hero .pill a {
+      color: #fff;
+      text-decoration: underline;
+    }
 
     /* Carousel */
     .hero-figure{aspect-ratio:4/3;border-radius:var(--radius-lg);background:#fff;border:1px solid #eee;box-shadow:var(--shadow);overflow:hidden;position:relative}
@@ -87,9 +87,24 @@
     .slide{min-width:100%;height:100%;position:relative}
     .slide img{width:100%;height:100%;object-fit:cover;display:block}
     .caption{position:absolute;left:12px;bottom:12px;background:rgba(17,24,39,.7);color:#fff;padding:8px 10px;border-radius:10px;font-size:12px}
-    .ctrl{position:absolute;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:40px;height:40px;border-radius:999px;border:1px solid #e5e7eb;background:#fff;box-shadow:var(--shadow)}
+    
+    /* Carousel Controls (Updated for Hover Effect) */
+    .ctrl{
+        position:absolute; top:50%; transform:translateY(-50%);
+        display:grid; place-items:center; width:40px; height:40px;
+        border-radius:999px; border:1px solid #e5e7eb; background:#fff; box-shadow:var(--shadow);
+        opacity: 0; /* Hidden by default */
+        transition: opacity 0.3s ease-in-out; /* Smooth fade in */
+        cursor: pointer;
+        z-index: 10;
+    }
+    /* Show controls when hovering over the hero image area */
+    .hero-figure:hover .ctrl {
+        opacity: 1;
+    }
+
     .ctrl:hover{background:#f9fafb}
-    .ctrl:focus{outline:3px solid var(--ring)}
+    .ctrl:focus{outline:3px solid var(--ring); opacity: 1;}
     .ctrl.prev{left:10px}
     .ctrl.next{right:10px}
     .ctrl svg{width:18px;height:18px}
@@ -178,7 +193,7 @@
     <div class="container wrap">
       <div>
         <span class="kicker">Senior Seminar Research</span>
-        <h2 class="title">3D DIC & Vibro-Modal Characterization of Wet-Stitched Pre-Preg Composites</h2>
+        <h2 class="title">3D DIC & Vibro-Dynamic Characterization of Wet-Stitched Pre-Preg Composites</h2>
         <p class="subtitle">Test Yonsei University provided wet-stitched carbon laminates using 3-point bending & tension with 3D DIC (at ACI); model with Abaqus; quantify dynamic behavior via laser vibrometry (at Aerostructures for Hypersonic Flight Research Lab, Walker 123); optionally design dry-stitched, resin-infused panels at ACI.</p>
         <div class="hero-points">
           <span class="badge">Fall 2025</span>
@@ -205,7 +220,6 @@
     </div>
   </section>
 
-  <!-- About Section -->
   <section id="about">
     <div class="container">
       <h2 class="section">Project Definition</h2>
@@ -231,13 +245,11 @@
     </div>
   </section>
 
-  <!-- Scope Section -->
   <section id="scope">
     <div class="container">
       <h2 class="section">Scope of Work</h2>
       <p class="lead">Semester objectives and methods aligned to deliver a validated dataset and presentation-ready results.</p>
-      <div class="grid cols-3">
-        <div class="card">
+      <div class="grid cols-2"> <div class="card">
           <h3>Objectives</h3>
           <ul class="mb-0">
             <li>Measure & speckle all Yonsei specimens.</li>
@@ -249,10 +261,12 @@
             <li>Stretch goal: design & manufacture dry-stitched, resin-infused panels at ACI.</li>
           </ul>
         </div>
+        
         <div class="card">
           <h3>Methods</h3>
           <p class="mb-0">Specimen prep & QA; DIC calibration (ACI); static tests with synchronized imaging; numerical correlation in Abaqus; vibro-modal excitation & ID at Walker 123; compare stitched architecture effects.</p>
         </div>
+        
         <div class="card">
           <h3>Reporting & Rhythm</h3>
           <ul class="mb-0">
@@ -262,11 +276,21 @@
             <li>Formal class updates and end-of-term report.</li>
           </ul>
         </div>
+
+        <div class="card">
+            <h3>Success Criteria</h3>
+            <ul class="mb-0">
+              <li>Calibrated DIC & clean strain maps (ACI).</li>
+              <li>Repeatable load–displacement curves.</li>
+              <li>Abaqus modeling within agreed tolerances.</li>
+              <li>Identified modal shifts vs. stitch architecture (Walker 123).</li>
+            </ul>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Team Section -->
   <section id="team">
     <div class="container">
       <h2 class="section">Team & Roles</h2>
@@ -293,7 +317,8 @@
         </div>
       </div>
       <div class="spacer"></div>
-      <div class="grid cols-2">
+      
+      <div class="grid cols-1">
         <div class="card">
           <h3>Advisors</h3>
           <ul class="mb-0">
@@ -301,20 +326,11 @@
             <li>Dr. Taehee Lee (Secondary)</li>
           </ul>
         </div>
-        <div class="card">
-          <h3>Success Criteria</h3>
-          <ul class="mb-0">
-            <li>Calibrated DIC & clean strain maps (ACI).</li>
-            <li>Repeatable load–displacement curves.</li>
-            <li>Abaqus modeling within agreed tolerances.</li>
-            <li>Identified modal shifts vs. stitch architecture (Walker 123).</li>
-          </ul>
-        </div>
       </div>
+
     </div>
   </section>
 
-  <!-- Work Section -->
   <section id="work">
     <div class="container">
       <h2 class="section">Work Accomplished</h2>
@@ -360,7 +376,6 @@
     </div>
   </section>
 
-  <!-- Timeline Section -->
   <section id="timeline">
     <div class="container">
       <h2 class="section">Timeline</h2>
@@ -372,12 +387,11 @@
         <div class="milestone"><h3 class="mb-1">Monthly Update — Sept</h3><div class="meta">Due: Sep 29, 2025</div></div>
         <div class="milestone"><h3 class="mb-1">Article Review #2</h3><div class="meta">Due: Oct 6, 2025</div></div>
         <div class="milestone"><h3 class="mb-1">Monthly Update — Oct</h3><div class="meta">Due: Oct 27, 2025</div></div>
-        <div class="milestone"><h3 class="mb-1">End-of-Semester Write-up</h3><div class="meta">Due: Nov 17, 2025</div></div>
+        <div class="milestone"><h3 class="mb-1">End-of-Semester Write-up</h3><div class="meta">Due: Nov 24, 2025</div></div>
       </div>
     </div>
   </section>
 
-  <!-- References Section -->
   <section id="references">
     <div class="container">
       <h2 class="section">References</h2>
@@ -403,7 +417,6 @@
     </div>
   </section>
 
-  <!-- Contact Section -->
   <section id="contact">
     <div class="container">
       <h2 class="section">Contact</h2>
@@ -424,7 +437,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container footgrid">
       <div>
@@ -442,9 +454,18 @@
     </div>
   </footer>
 
-  <!-- Carousel Script -->
   <script>
-    const HERO_IMAGES = [ { src: 'image_2025-08-29_203154627.jpeg', alt: 'Taking measurements of the specimens' } ];
+    // --- UPDATE YOUR IMAGE NAMES HERE ---
+    // Make sure these files exist inside a folder named "images" relative to your HTML file.
+    const IMAGE_FILENAMES = [
+        'image_2025-08-29_203154627.jpeg',
+        // 'second_image.jpg', 
+        // 'third_image.png'
+    ];
+    // -------------------------------------
+
+    const HERO_IMAGES = IMAGE_FILENAMES.map(name => ({ src: `images/${name}`, alt: 'Project Update' }));
+    
     const AUTOPLAY_MS = 5000;
     const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     const slidesEl = document.querySelector('.slides');
@@ -454,6 +475,7 @@
     const carousel = document.getElementById('heroCarousel');
     let current = 0, timer = null, hovering = false;
 
+    // Build the slides dynamically
     HERO_IMAGES.forEach((img, i)=>{
       const slide = document.createElement('div');
       slide.className = 'slide';
@@ -463,10 +485,17 @@
       const el = document.createElement('img');
       el.src = img.src;
       el.alt = img.alt || '';
+      
+      // Handle image load error just in case
+      el.onerror = function() { 
+          this.style.display='none'; 
+          console.error('Could not load image:', img.src); 
+      };
+      
       slide.appendChild(el);
       const cap = document.createElement('div');
       cap.className = 'caption';
-      cap.textContent = img.alt || 'Project image';
+      cap.textContent = `Image ${i+1}`;
       slide.appendChild(cap);
       slidesEl.appendChild(slide);
       if (HERO_IMAGES.length > 1) {
