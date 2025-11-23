@@ -268,7 +268,7 @@
         </div>
         
         <div class="card">
-          <h3>Reporting & Rhythm</h3>
+          <h3>Reporting</h3>
           <ul class="mb-0">
             <li>Bi-weekly / monthly meetings with Dr. Han-Gyu Kim.</li>
             <li>Email summaries & data to Dr. Taehee Lee as needed.</li>
@@ -459,14 +459,20 @@
     // Make sure these files exist inside a folder named "images" relative to your HTML file.
     const IMAGE_FILENAMES = [
         'image_2025-08-29_203154627.jpeg',
-        // 'second_image.jpg', 
-        // 'third_image.png'
+        'Garv_Chris_Tape_3ptbend.jpeg',
+        'Garv_Tape.jpeg',
+        'Lonnie_Tape.jpeg',
+        'Taped_Tensile_Tabs.jpeg',
+        'Ethan_speckle.jpeg',
+        'Lonnie_white_paint.jpeg',
+        'White_paint_tensile_specimens.jpeg',
+        'Speckled_3ptbending_specimens.jpeg',
     ];
     // -------------------------------------
 
     const HERO_IMAGES = IMAGE_FILENAMES.map(name => ({ src: `images/${name}`, alt: 'Project Update' }));
     
-    const AUTOPLAY_MS = 5000;
+    const AUTOPLAY_MS = 3000;
     const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     const slidesEl = document.querySelector('.slides');
     const dotsEl = document.getElementById('dotNav');
