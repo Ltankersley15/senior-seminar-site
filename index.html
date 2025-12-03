@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Senior Seminar — Team Website</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Senior Seminar — Team Website_files/css2" rel="stylesheet">
   <style>
     :root{
-      --brand-maroon:#5D1725; --brand-gray:#C1C6C8; --brand-white:#ffffff;
+      --brand-maroon:#5D1725;
+      --brand-gray:#C1C6C8; --brand-white:#ffffff;
       --accent-gold:#FFB81C; --accent-blue:#BDD6E6;
       --text:#111827; --muted:#6b7280;
 
@@ -18,7 +18,6 @@
         radial-gradient(1200px 600px at 80% -200px, rgba(93,23,37,.22), transparent 70%),
         radial-gradient(900px 500px at -200px -200px, rgba(93,23,37,.18), transparent 65%),
         linear-gradient(180deg, #ede3e5, #f5eaec);
-
       --card:#ffffff; --ring: rgba(93,23,37,.22);
       --shadow: 0 .5rem 1.25rem rgba(0,0,0,.08);
       --radius: 16px; --radius-sm: 12px; --radius-lg: 24px;
@@ -42,6 +41,7 @@
 
     /* Hero */
     .hero{position:relative;overflow:hidden;background: radial-gradient(1200px 600px at 100% -200px, rgba(93,23,37,.12), transparent 70%), radial-gradient(800px 500px at -100px -200px, rgba(255,184,28,.18), transparent 70%), linear-gradient(180deg,#fff, #f7f7f7)}
+   
     .hero .wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:56px 0}
     .kicker{display:inline-flex;align-items:center;gap:8px;background:rgba(93,23,37,.08);color:var(--brand-maroon);border-radius:999px;padding:6px 4px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.08em}
     .title{font-size:clamp(28px,4vw,44px);line-height:1.05;margin:14px 0 10px;font-weight:900}
@@ -57,7 +57,8 @@
     }
 
     .hero .subtitle {
-      color: #f3f4f6; /* lighter gray text on maroon */
+      color: #f3f4f6;
+      /* lighter gray text on maroon */
     }
 
     .hero .kicker {
@@ -90,11 +91,14 @@
     
     /* Carousel Controls (Updated for Hover Effect) */
     .ctrl{
-        position:absolute; top:50%; transform:translateY(-50%);
+        position:absolute;
+        top:50%; transform:translateY(-50%);
         display:grid; place-items:center; width:40px; height:40px;
         border-radius:999px; border:1px solid #e5e7eb; background:#fff; box-shadow:var(--shadow);
-        opacity: 0; /* Hidden by default */
-        transition: opacity 0.3s ease-in-out; /* Smooth fade in */
+        opacity: 0;
+        /* Hidden by default */
+        transition: opacity 0.3s ease-in-out;
+        /* Smooth fade in */
         cursor: pointer;
         z-index: 10;
     }
@@ -104,7 +108,8 @@
     }
 
     .ctrl:hover{background:#f9fafb}
-    .ctrl:focus{outline:3px solid var(--ring); opacity: 1;}
+    .ctrl:focus{outline:3px solid var(--ring);
+        opacity: 1;}
     .ctrl.prev{left:10px}
     .ctrl.next{right:10px}
     .ctrl svg{width:18px;height:18px}
@@ -125,7 +130,8 @@
       .hero .wrap{grid-template-columns:1fr}
       .grid.cols-3{grid-template-columns:1fr 1fr}
     }
-    @media (max-width: 640px){
+    @media 
+    (max-width: 640px){
       .grid.cols-3,.grid.cols-2{grid-template-columns:1fr}
     }
     .card{background:var(--card);border:1px solid #eee;border-radius:var(--radius);box-shadow:var(--shadow);padding:18px}
@@ -155,7 +161,8 @@
       display: block;
       box-shadow: var(--shadow);
       border: 3px solid #fff;
-      margin-bottom: 10px; /* space above the name when placed above */
+      margin-bottom: 10px;
+      /* space above the name when placed above */
     }
 
     /* Utilities */
@@ -173,17 +180,19 @@
         <div>
           <h1>Senior Seminar Project</h1>
           <div class="sub">Aerospace Engineering students at Mississippi State University</div>
+ 
         </div>
       </div>
       <nav aria-label="Main">
         <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#scope">Scope</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#work">Work</a></li>
-          <li><a href="#timeline">Timeline</a></li>
-          <li><a href="#references">References</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="file:///C:/Users/Ethan/Downloads/Website.html#about">About</a></li>
+          <li><a href="file:///C:/Users/Ethan/Downloads/Website.html#scope">Scope</a></li>
+          <li><a href="file:///C:/Users/Ethan/Downloads/Website.html#team">Team</a></li>
+          <li><a href="file:///C:/Users/Ethan/Downloads/Website.html#work">Work</a></li>
+          <li><a href="file:///C:/Users/Ethan/Downloads/Website.html#timeline">Timeline</a></li>
+          <li><a href="file:///C:/Users/Ethan/Downloads/Website.html#references">References</a></li>
+      
+          <li><a href="file:///C:/Users/Ethan/Downloads/Website.html#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -193,28 +202,33 @@
     <div class="container wrap">
       <div>
         <span class="kicker">Senior Seminar Research</span>
-        <h2 class="title">3D DIC & Vibro-Dynamic Characterization of Wet-Stitched Pre-Preg Composites</h2>
-        <p class="subtitle">Test Yonsei University provided wet-stitched carbon laminates using 3-point bending & tension with 3D DIC (at ACI); model with Abaqus; quantify dynamic behavior via laser vibrometry (at Aerostructures for Hypersonic Flight Research Lab, Walker 123); optionally design dry-stitched, resin-infused panels at ACI.</p>
+        <h2 class="title" style="font-size: 36px;">The Effect of Multidirectional Fiber Mats and Stitching Density on the Stress Distribution in Stitched Carbon Fiber Composites</h2>
+        <p class="subtitle">This research will test wet-stitch carbon laminates with various layer types provided 
+          by Yonsei University using 3-point bending &amp; tension with 3D DIC, model composites with Abaqus, quantify dynamic behavior via laser vibrometry, and optionally design dry-stitched, resin-infused panels.</p>
         <div class="hero-points">
           <span class="badge">Fall 2025</span>
           <span class="pill">Advisors: Dr. Han-Gyu Kim • Dr. Taehee Lee</span>
           <span class="pill">Team: Lonnie Tankersley, Garv Patel, Christopher Bolton, Ethan White</span>
         </div>
+        
         <div class="spacer"></div>
         <div class="cta">
-          <a class="btn secondary" href="#work">See Latest Work</a>
+          <a class="btn secondary" href="file:///C:/Users/Ethan/Downloads/Website.html#work">See Latest Work</a>
         </div>
       </div>
       <figure class="hero-figure" aria-label="Project image">
         <div class="carousel" id="heroCarousel">
-          <div class="slides" role="group" aria-roledescription="carousel" aria-label="Project images"></div>
+          <div class="slides" role="group" aria-roledescription="carousel" aria-label="Project images" style="transform: translateX(-200%);"><div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 1 of 9"><img src="file:///C:/Users/Ethan/Downloads/images/image_2025-08-29_203154627.jpeg" alt="Project Update" style="display: none;"><div class="caption">Image 1</div></div><div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 2 of 9"><img src="file:///C:/Users/Ethan/Downloads/images/Garv_Chris_Tape_3ptbend.jpeg" alt="Project Update" 
+          style="display: none;"><div class="caption">Image 2</div></div><div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 3 of 9"><img src="file:///C:/Users/Ethan/Downloads/images/Garv_Tape.jpeg" alt="Project Update" style="display: none;"><div class="caption">Image 3</div></div><div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 4 of 9"><img src="file:///C:/Users/Ethan/Downloads/images/Lonnie_Tape.jpeg" alt="Project Update" style="display: none;"><div class="caption">Image 4</div></div><div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 5 of 9"><img src="file:///C:/Users/Ethan/Downloads/images/Taped_Tensile_Tabs.jpeg" alt="Project Update" style="display: none;"><div class="caption">Image 5</div></div><div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 6 of 9"><img src="file:///C:/Users/Ethan/Downloads/images/Ethan_speckle.jpeg" alt="Project Update" style="display: none;"><div class="caption">Image 6</div></div><div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 7 of 9"><img src="file:///C:/Users/Ethan/Downloads/images/Lonnie_white_paint.jpeg" alt="Project Update" style="display: none;"><div class="caption">Image 7</div></div><div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 8 of 9"><img src="file:///C:/Users/Ethan/Downloads/images/White_paint_tensile_specimens.jpeg" alt="Project Update" style="display: none;"><div class="caption">Image 8</div></div><div class="slide" role="group" aria-roledescription="slide" aria-label="Slide 9 of 9"><img src="file:///C:/Users/Ethan/Downloads/images/Speckled_3ptbending_specimens.jpeg" alt="Project Update" style="display: none;"><div 
+          class="caption">Image 9</div></div></div>
           <button class="ctrl prev" aria-label="Previous image" id="prevBtn">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M15 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </button>
           <button class="ctrl next" aria-label="Next image" id="nextBtn">
-            <svg viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <svg viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          
           </button>
-          <div class="dots" id="dotNav"></div>
+          <div class="dots" id="dotNav"><button type="button" aria-label="Go to slide 1" aria-current="false"></button><button type="button" aria-label="Go to slide 2" aria-current="false"></button><button type="button" aria-label="Go to slide 3" aria-current="true"></button><button type="button" aria-label="Go to slide 4" aria-current="false"></button><button type="button" aria-label="Go to slide 5" aria-current="false"></button><button type="button" aria-label="Go to slide 6" aria-current="false"></button><button type="button" aria-label="Go to slide 7" aria-current="false"></button><button type="button" aria-label="Go to slide 8" aria-current="false"></button><button type="button" aria-label="Go to slide 9" aria-current="false"></button></div>
         </div>
       </figure>
     </div>
@@ -222,19 +236,23 @@
 
   <section id="about">
     <div class="container">
+      
       <h2 class="section">Project Definition</h2>
-      <p class="lead">Stitched composites are increasingly used for lightweight, durable structures. Yonsei-manufactured, wet-stitched pre-preg laminates provide a chance to study interlaminar damage propagation, stiffness degradation, and modal behavior relevant to aerospace and infrastructure applications.</p>
+      <p class="lead">Stitched composites are increasingly used for lightweight, durable structures.
+        Yonsei-manufactured, wet-stitched pre-preg laminates provide a chance to study interlaminar damage propagation, stiffness degradation, and modal behavior relevant to aerospace and infrastructure applications.</p>
       <div class="grid cols-3">
         <div class="card">
           <h3>Problem Statement</h3>
-          <p class="mb-0">Understand how stitching in thick laminates affects crack growth, strain fields, and dynamic response under representative loading.</p>
+          <p class="mb-0">The study aims to compare the effect of intermittently placed multidirectional fiber mats as well as the through-thickness, square stitching impact on panel delamination and rigidity.</p>
         </div>
+      
         <div class="card">
           <h3>Impact</h3>
           <p class="mb-0">Results inform stitched-composite design for primary structures and composite-reinforced infrastructure.</p>
         </div>
         <div class="card">
-          <h3>Partners & Facilities</h3>
+          <h3>Partners &amp;
+            Facilities</h3>
           <ul class="mb-0">
             <li>Yonsei University — specimens</li>
             <li>Mississippi State ACI — 3D DIC, Shimadzu UTM, resin infusion</li>
@@ -245,6 +263,7 @@
     </div>
   </section>
 
+ 
   <section id="scope">
     <div class="container">
       <h2 class="section">Scope of Work</h2>
@@ -252,27 +271,37 @@
       <div class="grid cols-2"> <div class="card">
           <h3>Objectives</h3>
           <ul class="mb-0">
-            <li>Measure & speckle all Yonsei specimens.</li>
-            <li>Run three-point bending & tension tests.</li>
+            <li>Measure &amp;
+              speckle all Yonsei specimens.</li>
+            <li>Run three-point bending &amp;
+              tension tests.</li>
             <li>Use 3D DIC for full-field strain maps (at ACI).</li>
-            <li>Develop & validate an Abaqus model.</li>
+            <li>Develop &amp;
+              validate an Abaqus model.</li>
             <li>Laser vibrometer modal testing (fn, ζ, mode shapes) at Walker 123.</li>
-            <li>Deliver a clean dataset for Yonsei; prepare AIAA-quality visuals.</li>
-            <li>Stretch goal: design & manufacture dry-stitched, resin-infused panels at ACI.</li>
+            <li>Deliver a clean dataset for Yonsei;
+              prepare AIAA-quality visuals.</li>
+            <li>Determine effect of multidirectional fiber layers.</li>
+            <li>Stretch goal: design &amp;
+              manufacture dry-stitched, resin-infused panels at ACI.</li>
           </ul>
         </div>
         
         <div class="card">
           <h3>Methods</h3>
-          <p class="mb-0">Specimen prep & QA; DIC calibration (ACI); static tests with synchronized imaging; numerical correlation in Abaqus; vibro-modal excitation & ID at Walker 123; compare stitched architecture effects.</p>
+          <p class="mb-0">Specimen prep &amp;
+            QA; DIC calibration (ACI); static tests with synchronized imaging; numerical correlation in Abaqus; vibro-modal excitation &amp; ID at Walker 123;
+            compare stitched architecture effects.</p>
         </div>
         
         <div class="card">
           <h3>Reporting</h3>
           <ul class="mb-0">
             <li>Bi-weekly / monthly meetings with Dr. Han-Gyu Kim.</li>
-            <li>Email summaries & data to Dr. Taehee Lee as needed.</li>
-            <li>Ongoing website documentation & Gantt updates.</li>
+            <li>Email summaries &amp;
+              data to Dr. Taehee Lee as needed.</li>
+            <li>Ongoing website documentation &amp;
+              Gantt updates.</li>
             <li>Formal class updates and end-of-term report.</li>
           </ul>
         </div>
@@ -280,7 +309,8 @@
         <div class="card">
             <h3>Success Criteria</h3>
             <ul class="mb-0">
-              <li>Calibrated DIC & clean strain maps (ACI).</li>
+              <li>Calibrated DIC &amp;
+                clean strain maps (ACI).</li>
               <li>Repeatable load–displacement curves.</li>
               <li>Abaqus modeling within agreed tolerances.</li>
               <li>Identified modal shifts vs. stitch architecture (Walker 123).</li>
@@ -293,27 +323,36 @@
 
   <section id="team">
     <div class="container">
-      <h2 class="section">Team & Roles</h2>
+  
+      <h2 class="section">Team &amp; Roles</h2>
       <div class="grid cols-2">
         <div class="card">
-          <img class="avatar" src="Lonnie_picture.jpg" alt="Lonnie Tankersley headshot" />
-          <h3>Lonnie Tankersley — Specimen Prep & Testing Lead</h3>
-          <div class="meta mb-2">Paint/speckle; coordinate Shimadzu UTM testing at ACI.</div>
+          <img class="avatar" src="file:///C:/Users/Ethan/Downloads/Lonnie_picture.jpg" alt="Lonnie Tankersley headshot">
+          <h3>Lonnie Tankersley — Specimen Prep &amp;
+            Testing Lead</h3>
+          <div class="meta mb-2">Paint/speckle;
+            coordinate Shimadzu UTM testing at ACI.</div>
         </div>
         <div class="card">
-          <img class="avatar" src="Garv_picture.jpeg" alt="Garv Patel headshot" />
-          <h3>Garv Patel — Dynamic Testing & Coordinator Lead</h3>
-          <div class="meta mb-2">Laser vibrometry at Walker 123; integrate dynamic & static results; assist Abaqus; coordinate contingencies.</div>
+          <img class="avatar" src="file:///C:/Users/Ethan/Downloads/Garv_picture.jpeg" alt="Garv Patel headshot">
+          <h3>Garv Patel — Dynamic Testing &amp;
+            Coordinator Lead</h3>
+          <div class="meta mb-2">Laser vibrometry at Walker 123;
+            integrate dynamic &amp; static results; assist Abaqus; coordinate contingencies.</div>
         </div>
         <div class="card">
-          <img class="avatar" src="Chris_picture.jpeg" alt="Christopher Bolton headshot" />
-          <h3>Christopher Bolton — Numerical Analysis & Modeling Lead</h3>
-          <div class="meta mb-2">Abaqus models with stitching; post-test numerical analysis.</div>
+          <img class="avatar" src="file:///C:/Users/Ethan/Downloads/Chris_picture.jpeg" alt="Christopher Bolton headshot">
+          <h3>Christopher Bolton — Numerical Analysis &amp;
+            Modeling Lead</h3>
+          <div class="meta mb-2">Abaqus models with stitching;
+            post-test numerical analysis.</div>
         </div>
         <div class="card">
-          <img class="avatar" src="Ethan_picture.jpg" alt="Ethan White headshot" />
-          <h3>Ethan White — Development & Manufacturing Lead</h3>
-          <div class="meta mb-2">Leads dry-stitched panel development; contributes Abaqus models.</div>
+          <img class="avatar" src="file:///C:/Users/Ethan/Downloads/Ethan_picture.jpg" alt="Ethan White headshot">
+          <h3>Ethan White — Development &amp;
+            Manufacturing Lead</h3>
+          <div class="meta mb-2">Leads dry-stitched panel development;
+            contributes Abaqus models.</div>
         </div>
       </div>
       <div class="spacer"></div>
@@ -322,8 +361,10 @@
         <div class="card">
           <h3>Advisors</h3>
           <ul class="mb-0">
-            <li>Dr. Han-Gyu Kim (Primary)</li>
-            <li>Dr. Taehee Lee (Secondary)</li>
+            <li>Dr.
+              Han-Gyu Kim (Primary)</li>
+            <li>Dr.
+              Taehee Lee (Secondary)</li>
           </ul>
         </div>
       </div>
@@ -336,42 +377,65 @@
       <h2 class="section">Work Accomplished</h2>
       <p class="lead">Quick tiles that link to notes, images, or data as they’re produced.</p>
       <div class="grid cols-3">
+        
         <article class="card">
-          <h3 class="mb-1">Specimen Intake & QA</h3>
+         
+          <h3 class="mb-1">Specimen Intake and Documentation</h3>
           <div class="meta mb-2">Aug–Sep 2025 • ACI</div>
-          <p class="mb-2">Catalog thickness & stitch pitch; prep surfaces; apply speckle patterns; document layups.</p>
-          <a href="#">Read notes →</a>
+          <p class="mb-2">Catalog thickness &amp;
+            stitch pitch; prep surfaces; apply speckle patterns; document layups.</p>
+          <a href="file:///C:/Users/Ethan/Downloads/Website.html#">Read notes →</a>
         </article>
+        
         <article class="card">
-          <h3 class="mb-1">DIC Setup & Calibration</h3>
-          <div class="meta mb-2">Sep 2025 • ACI</div>
-          <p class="mb-2">Two-camera calibration; subset/step optimization on a dummy coupon.</p>
-          <a href="#">Calibration packet →</a>
+          <h3 class="mb-1">Laser Vibrometer Testing</h3>
+          <div class="meta mb-2">Sep–Oct 2025 • Walker 123</div>
+          <p class="mb-2">Laser vibrometer sweep to identify natural frequency and validate Euler-Bernoulli Beam Assumptions.</p>
+   
+          <a href="file:///C:/Users/Ethan/Downloads/Website.html#">Modal results →</a>
         </article>
+        
         <article class="card">
-          <h3 class="mb-1">Static Tests — 3-pt Bend & Tension</h3>
+          <h3 class="mb-1">DIC Setup &amp;
+            Calibration</h3>
           <div class="meta mb-2">Oct 2025 • ACI</div>
-          <p class="mb-2">Load–displacement + full-field strain; note crack initiation/bridging features.</p>
-          <a href="#">Data & figures →</a>
+          <p class="mb-2">Two-camera calibration;
+            subset/step optimization on a dummy coupon.</p>
+          <a href="file:///C:/Users/Ethan/Downloads/Website.html#">Calibration packet →</a>
         </article>
+        
         <article class="card">
-          <h3 class="mb-1">Vibro-Modal Characterization</h3>
-          <div class="meta mb-2">Oct–Nov 2025 • Walker 123</div>
-          <p class="mb-2">Laser vibrometer sweep to identify fn, damping, and mode shapes.</p>
-          <a href="#">Modal results →</a>
+          <h3 class="mb-1">Static Tests - Tension</h3>
+          <div class="meta mb-2">Nov 2025 • ACI</div>
+          <p class="mb-2">Load-Displacement curves, Full Field Strain, Note crack initiation and propagation.</p>
+        
+          <a href="file:///C:/Users/Ethan/Downloads/Website.html#">Data &amp; figures →</a>
         </article>
+        
+        <article class="card">
+          <h3 class="mb-1">Static Tests - 3 Point Bending</h3>
+          <div class="meta mb-2">TBD • ACI</div>
+          <p class="mb-2">Load-Displacement, Full-Field Strain, Note Crack initiation and Propagation.</p>
+          <a href="file:///C:/Users/Ethan/Downloads/Website.html#">Data &amp;
+            figures →</a>
+        </article>
+
         <article class="card">
           <h3 class="mb-1">Abaqus Modeling</h3>
-          <div class="meta mb-2">Nov 2025 • Modeling</div>
+          <div class="meta mb-2">TBD • Modeling</div>
           <p class="mb-2">Model stitched architecture, tune parameters, compare to lab data.</p>
-          <a href="#">Model files →</a>
+          <a href="file:///C:/Users/Ethan/Downloads/Website.html#">Model files →</a>
         </article>
+        
+        
         <article class="card">
-          <h3 class="mb-1">Stretch Goal — Dry-Stitched Panels</h3>
-          <div class="meta mb-2">As time permits • ACI</div>
-          <p class="mb-2">Design, manufacture, and test resin-infused, dry-stitched panels; compare with Yonsei parts.</p>
-          <a href="#">Build log →</a>
+          <h3 class="mb-1">Dry-Stitched Panels</h3>
+          <div class="meta mb-2">TBD • ACI</div>
+          <p class="mb-2">Design, manufacture, and test resin-infused, dry-stitched panels;
+            compare with Yonsei parts.</p>
+          <a href="file:///C:/Users/Ethan/Downloads/Website.html#">Build log →</a>
         </article>
+        
       </div>
     </div>
   </section>
@@ -382,6 +446,7 @@
       <div class="timeline">
         <div class="milestone"><h3 class="mb-1">SOW Complete</h3><div class="meta">Target: Sep 2, 2025</div></div>
         <div class="milestone"><h3 class="mb-1">Proposal Presentation</h3><div class="meta">Target: Early Sep 2025</div></div>
+    
         <div class="milestone"><h3 class="mb-1">Website v1 (this page)</h3><div class="meta">Target: Sep 3, 2025</div></div>
         <div class="milestone"><h3 class="mb-1">Article Review #1</h3><div class="meta">Due: Sep 15, 2025</div></div>
         <div class="milestone"><h3 class="mb-1">Monthly Update — Sept</h3><div class="meta">Due: Sep 29, 2025</div></div>
@@ -399,10 +464,12 @@
       <p class="lead">Standards, key papers, and lab docs.</p>
       <div class="grid cols-2">
         <div class="card">
-          <h3>Key Papers & Standards</h3>
+          <h3>Key Papers &amp;
+            Standards</h3>
           <ul class="mb-0">
             <li>ASTM D7905/D7905M — Mode II Interlaminar Fracture Toughness (ENF)</li>
-            <li>Representative stitched-laminate fracture & modal studies (add DOIs)</li>
+            <li>Representative stitched-laminate fracture &amp;
+              modal studies (add DOIs)</li>
             <li>DIC best-practice guides (subset, step, calibration)</li>
           </ul>
         </div>
@@ -410,8 +477,10 @@
           <h3>Lab Docs</h3>
           <ul class="mb-0">
             <li>DIC calibration procedure (PDF)</li>
-            <li>Specimen log & material tracking worksheet</li>
+            <li>Specimen log &amp;
+              material tracking worksheet</li>
             <li>Test matrix and safety checklist</li>
+            <li>PowerPoint outlining panel composition from Yonsei University</li>
           </ul>
         </div>
       </div>
@@ -423,11 +492,13 @@
       <h2 class="section">Contact</h2>
       <div class="grid cols-2">
         <div class="card">
+  
           <h3 class="mb-1">Team Emails</h3>
           <p class="mb-2"><a href="mailto:lmt413@msstate.edu">Lonnie Tankersley</a> • <a href="mailto:cdb1066@msstate.edu">Christopher Bolton</a></p>
           <p class="mb-2"><a href="mailto:gdp98@msstate.edu">Garv Patel</a> • <a href="mailto:emw511@msstate.edu">Ethan White</a></p>
           <h3 class="mb-1">Advisor Emails</h3>
-          <p class="mb-2"><a href="mailto:hkim@ae.msstate.edu">Dr. Han-Gyu Kim</a> • <a href="mailto:tl1401@msstate.edu">Dr. Taehee Lee</a></p>
+          <p class="mb-2"><a href="mailto:hkim@ae.msstate.edu">Dr.
+            Han-Gyu Kim</a> • <a href="mailto:tl1401@msstate.msstate.edu">Dr. Taehee Lee</a></p>
         </div>
         <div class="card">
           <h3 class="mb-1">Facilities</h3>
@@ -439,17 +510,19 @@
   </section>
 
   <footer>
-    <div class="container footgrid">
+    <div class="container 
+      footgrid">
       <div>
         <strong>Unofficial student project site</strong>
-        <p class="mb-2">Built for a Senior Seminar course project. © 2025.</p>
+        <p class="mb-2">Built for a Senior Seminar course project.
+          © 2025.</p>
       </div>
       <div>
         <div>Links</div>
         <ul>
-          <li><a href="#">Course Page</a></li>
-          <li><a href="#">Documentation</a></li>
-          <li><a href="#">Repository</a></li>
+          <li><a href="file:///C:/Users/Ethan/Downloads/Website.html#">Course Page</a></li>
+          <li><a href="file:///C:/Users/Ethan/Downloads/Website.html#">Documentation</a></li>
+          <li><a href="file:///C:/Users/Ethan/Downloads/Website.html#">Repository</a></li>
         </ul>
       </div>
     </div>
@@ -457,6 +530,7 @@
 
   <script>
     // --- UPDATE YOUR IMAGE NAMES HERE ---
+    
     // Make sure these files exist inside a folder named "images" relative to your HTML file.
     const IMAGE_FILENAMES = [
         'image_2025-08-29_203154627.jpeg',
@@ -472,7 +546,6 @@
     // -------------------------------------
 
     const HERO_IMAGES = IMAGE_FILENAMES.map(name => ({ src: `images/${name}`, alt: 'Project Update' }));
-    
     const AUTOPLAY_MS = 3000;
     const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
     const slidesEl = document.querySelector('.slides');
@@ -481,7 +554,6 @@
     const nextBtn = document.getElementById('nextBtn');
     const carousel = document.getElementById('heroCarousel');
     let current = 0, timer = null, hovering = false;
-
     // Build the slides dynamically
     HERO_IMAGES.forEach((img, i)=>{
       const slide = document.createElement('div');
@@ -494,6 +566,7 @@
       el.alt = img.alt || '';
       
       // Handle image load error just in case
+      
       el.onerror = function() { 
           this.style.display='none'; 
           console.error('Could not load image:', img.src); 
@@ -506,6 +579,7 @@
       slide.appendChild(cap);
       slidesEl.appendChild(slide);
       if (HERO_IMAGES.length > 1) {
+    
         const dot = document.createElement('button');
         dot.type = 'button';
         dot.setAttribute('aria-label', `Go to slide ${i+1}`);
@@ -520,9 +594,11 @@
         [...dotsEl.children].forEach((d, i)=> d.setAttribute('aria-current', i===current ? 'true' : 'false'));
       }
     }
-    function go(i){ current = (i+HERO_IMAGES.length)%HERO_IMAGES.length; update(); }
+    function go(i){ current = (i+HERO_IMAGES.length)%HERO_IMAGES.length; update();
+    }
     function next(){ go(current+1); }
-    function prev(){ go(current-1); }
+    function prev(){ go(current-1);
+    }
 
     if (HERO_IMAGES.length <= 1) {
       prevBtn.style.display = 'none';
@@ -542,9 +618,10 @@
       carousel.addEventListener('focusout', start);
       start();
     }
-    function start(){ if(prefersReducedMotion || hovering || HERO_IMAGES.length <= 1) return; stop(); timer = setInterval(next, AUTOPLAY_MS); }
+    function start(){ if(prefersReducedMotion || hovering || HERO_IMAGES.length <= 1) return; stop(); timer = setInterval(next, AUTOPLAY_MS);
+    }
     function stop(){ if(timer){ clearInterval(timer); timer = null; } }
     update();
   </script>
-</body>
-</html>
+
+</body></html>
